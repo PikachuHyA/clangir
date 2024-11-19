@@ -494,6 +494,10 @@ public:
     return createCast(cir::CastKind::int_to_ptr, src, newTy);
   }
 
+  mlir::Value createIntToBoolCast(mlir::Value v) {
+    return createCast(cir::CastKind::int_to_bool, v, getBoolTy());
+  }
+
   mlir::Value createGetMemberOp(mlir::Location &loc, mlir::Value structPtr,
                                 const char *fldName, unsigned idx) {
 
